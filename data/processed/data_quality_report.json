@@ -1,0 +1,22 @@
+{
+  "total_records": 105519,
+  "duplicate_records": 100516,
+  "missing_salaries": 52626,
+  "missing_company": 0,
+  "missing_locations": 150,
+  "unmapped_locations": 0,
+  "ambiguous_locations": 2530,
+  "overseas_postings": 8534,
+  "missing_titles": 0,
+  "uncategorized_titles": 5478,
+  "fuzzy_matched_titles": 2156,
+  "salary_period_inferred_daily": 20190,
+  "salary_period_inferred_weekly": 1326,
+  "salary_period_inferred_monthly": 31270,
+  "salary_period_ambiguous": 107,
+  "salary_outliers_flagged": 39,
+  "salary_records_monthly_normalized": 52786,
+  "salary_records_period_estimated": 52786,
+  "valid_records": 4993,
+  "generated_at": "2026-08-31T12:03:48.858328+00:00"
+}

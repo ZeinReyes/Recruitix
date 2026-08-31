@@ -1,0 +1,1431 @@
+/* =========================================================
+   BASE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f5f7fa;
+  color: #172033;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  height: 72px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e4e8ee;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+}
+
+.header > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 24px;
+  line-height: 1;
+
+  font-weight: 800;
+  letter-spacing: -0.7px;
+
+  color: #1e3a8a;
+}
+
+.header p {
+  margin: 5px 0 0;
+
+  font-size: 11px;
+
+  color: #7a8495;
+
+  letter-spacing: 0.1px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.header nav a {
+  position: relative;
+
+  padding: 25px 0;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #596274;
+
+  transition:
+    color 0.18s ease;
+}
+
+.header nav a:hover {
+  color: #1e3a8a;
+}
+
+.header nav a.active {
+  color: #1e3a8a;
+}
+
+.header nav a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: #1e3a8a;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  width: min(1240px, 90%);
+
+  margin: 0 auto;
+
+  padding: 42px 0 80px;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 50px;
+
+  padding: 20px 0 38px;
+}
+
+.dashboard-header h1 {
+  margin: 7px 0 14px;
+
+  font-size: 42px;
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+
+  color: #172033;
+}
+
+.dashboard-intro {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  color: #1e3a8a;
+}
+
+
+/* =========================================================
+   DATASET CARD
+========================================================= */
+
+.dataset-card {
+  min-width: 205px;
+
+  padding: 20px 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 10px;
+}
+
+.dataset-card span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  color: #7a8495;
+}
+
+.dataset-card strong {
+  display: block;
+
+  font-size: 32px;
+  line-height: 1.1;
+
+  color: #1e3a8a;
+}
+
+.dataset-card small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #7a8495;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.stat-card {
+  position: relative;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 10px;
+
+  padding: 22px;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.stat-card:hover {
+  border-color: #d5dbe4;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.045);
+}
+
+.stat-card-title {
+  margin-bottom: 9px;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  color: #737d8e;
+}
+
+.stat-card-value {
+  font-size: 27px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.4px;
+
+  color: #1e3a8a;
+}
+
+.stat-card-description {
+  margin-top: 7px;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  color: #929aaa;
+}
+
+
+/* =========================================================
+   ANALYTICS SECTION
+========================================================= */
+
+.analytics-section {
+  margin-top: 58px;
+}
+
+.section-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 30px;
+
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 3px 0 0;
+
+  font-size: 25px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.6px;
+
+  color: #172033;
+}
+
+.section-heading > p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #6d7788;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   CHART GRID
+========================================================= */
+
+.chart-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.chart-card {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 10px;
+
+  padding: 22px;
+}
+
+.full-width-chart {
+  width: 100%;
+}
+
+.chart-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 16px;
+}
+
+.chart-header h3 {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #202938;
+}
+
+.chart-header p {
+  margin: 5px 0 0;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #7b8494;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.pie-chart-container {
+  width: 100%;
+}
+
+.chart-footnote {
+  margin-top: -2px;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  color: #858e9d;
+}
+
+
+/* =========================================================
+   SALARY
+========================================================= */
+
+.salary-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+.salary-card {
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 10px;
+}
+
+.salary-card span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  color: #7a8495;
+}
+
+.salary-card strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 26px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+
+  color: #1e3a8a;
+}
+
+.salary-card p {
+  margin: 0;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+
+  color: #697386;
+}
+
+
+/* =========================================================
+   METHODOLOGY
+========================================================= */
+
+.methodology-panel {
+  margin-top: 58px;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 10px;
+}
+
+.methodology-panel h2 {
+  margin: 4px 0 10px;
+
+  font-size: 23px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+}
+
+.methodology-panel > div:first-child p:last-child {
+  max-width: 750px;
+
+  margin-bottom: 0;
+
+  color: #687386;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.methodology-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+
+  margin-top: 28px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.methodology-grid strong {
+  display: block;
+
+  font-size: 21px;
+
+  font-weight: 750;
+
+  color: #1e3a8a;
+}
+
+.methodology-grid span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 11px;
+
+  color: #7a8495;
+}
+
+
+/* =========================================================
+   JOB PAGE
+========================================================= */
+
+.page-heading {
+  margin-bottom: 26px;
+}
+
+.page-heading h2 {
+  margin: 0;
+
+  font-size: 32px;
+
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  letter-spacing: -0.9px;
+
+  color: #172033;
+}
+
+.page-heading p:last-child {
+  margin-top: 8px;
+
+  color: #737d8e;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filters {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+}
+
+.filters input,
+.filters select {
+  width: 100%;
+
+  min-height: 44px;
+
+  border: 1px solid #dce1e8;
+
+  background: #ffffff;
+
+  border-radius: 7px;
+
+  padding: 10px 13px;
+
+  outline: none;
+
+  color: #273044;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.filters input::placeholder {
+  color: #9aa3b1;
+}
+
+.filters input:hover,
+.filters select:hover {
+  border-color: #cbd2dc;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #1e3a8a;
+
+  box-shadow:
+    0 0 0 3px rgba(30, 58, 138, 0.07);
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.results-count {
+  margin: 0 0 11px;
+
+  color: #747e8f;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   JOB TABLE
+========================================================= */
+
+.table-container {
+  overflow-x: auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.02);
+}
+
+.job-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+}
+
+.job-table th {
+  text-align: left;
+
+  padding: 13px 15px;
+
+  background: #f8f9fb;
+
+  border-bottom: 1px solid #e1e6ed;
+
+  color: #667085;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.65px;
+
+  white-space: nowrap;
+}
+
+.job-table td {
+  padding: 14px 15px;
+
+  border-top: 1px solid #edf0f4;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  color: #596273;
+
+  vertical-align: middle;
+}
+
+.job-table tbody tr:first-child td {
+  border-top: none;
+}
+
+.job-table td strong {
+  display: inline-block;
+
+  max-width: 280px;
+
+  color: #202938;
+
+  font-weight: 650;
+}
+
+.job-table tbody tr {
+  transition:
+    background 0.15s ease;
+}
+
+.job-table tbody tr:hover {
+  background: #fafbfc;
+}
+
+
+/* =========================================================
+   CATEGORY BADGE
+========================================================= */
+
+.category-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  max-width: 180px;
+
+  padding: 4px 8px;
+
+  border: 1px solid #dce4f7;
+
+  border-radius: 5px;
+
+  background: #f3f6fd;
+
+  color: #1e3a8a;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin: 26px 0 45px;
+
+  flex-wrap: wrap;
+}
+
+.pagination-pages {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.pagination-button,
+.pagination-page {
+  min-width: 36px;
+
+  height: 36px;
+
+  border: 1px solid #d7dce4;
+
+  background: #ffffff;
+
+  color: #4b5565;
+
+  border-radius: 6px;
+
+  padding: 0 11px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.pagination-button:hover:not(:disabled),
+.pagination-page:hover {
+  border-color: #bfc7d4;
+
+  background: #f8f9fb;
+
+  color: #1e3a8a;
+}
+
+.pagination-button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+.pagination-page.active {
+  background: #1e3a8a;
+
+  color: #ffffff;
+
+  border-color: #1e3a8a;
+}
+
+.pagination-page.active:hover {
+  background: #172f72;
+
+  border-color: #172f72;
+
+  color: #ffffff;
+}
+
+.pagination-ellipsis {
+  padding: 0 4px;
+
+  color: #8a93a2;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   EMPTY / ERROR
+========================================================= */
+
+.empty-state,
+.no-results {
+  padding: 48px 30px;
+
+  text-align: center;
+
+  color: #858e9d;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 10px;
+}
+
+.no-results h3 {
+  margin: 0 0 7px;
+
+  color: #202938;
+
+  font-size: 16px;
+}
+
+.no-results p {
+  margin: 0;
+
+  color: #737d8e;
+
+  font-size: 13px;
+}
+
+.error-box {
+  padding: 26px 28px;
+
+  background: #ffffff;
+
+  border: 1px solid #ead4d4;
+
+  border-left: 3px solid #a94442;
+
+  border-radius: 8px;
+
+  color: #8a3333;
+}
+
+.error-box h2 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+}
+
+.error-box p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #697386;
+
+  font-size: 13px;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+
+  border: 3px solid #dfe4ec;
+
+  border-top-color: #1e3a8a;
+
+  border-radius: 50%;
+
+  animation:
+    spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   DASHBOARD FILTERS
+========================================================= */
+
+.dashboard-filters {
+  margin-bottom: 22px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 10px;
+}
+
+.filter-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 15px;
+}
+
+.filter-heading h3 {
+  margin: 3px 0 0;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #202938;
+}
+
+.active-filter-count {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border: 1px solid #dce4f7;
+
+  border-radius: 5px;
+
+  background: #f3f6fd;
+
+  color: #1e3a8a;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1.5fr
+    1.5fr
+    1.5fr
+    auto;
+
+  gap: 9px;
+
+  align-items: center;
+}
+
+.filter-grid select {
+  width: 100%;
+
+  min-width: 0;
+
+  height: 42px;
+
+  padding: 9px 12px;
+
+  border: 1px solid #dce1e8;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #273044;
+
+  font-size: 12px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.filter-grid select:hover {
+  border-color: #cbd2dc;
+}
+
+.filter-grid select:focus {
+  border-color: #1e3a8a;
+
+  box-shadow:
+    0 0 0 3px rgba(30, 58, 138, 0.07);
+}
+
+.clear-filters {
+  height: 42px;
+
+  border: 1px solid #1e3a8a;
+
+  background: #1e3a8a;
+
+  color: #ffffff;
+
+  border-radius: 7px;
+
+  padding: 0 15px;
+
+  white-space: nowrap;
+
+  font-size: 12px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.clear-filters:hover:not(:disabled) {
+  background: #172f72;
+
+  border-color: #172f72;
+}
+
+.clear-filters:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SALARY CHART
+========================================================= */
+
+.salary-chart-card {
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   GENERAL FOCUS
+========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid #1e3a8a;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .header {
+    padding: 0 4%;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .salary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clear-filters {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .dashboard-header {
+    align-items: flex-start;
+
+    gap: 30px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 37px;
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .methodology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-heading > p {
+    max-width: 360px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .header {
+    height: auto;
+
+    min-height: 68px;
+
+    padding: 13px 5%;
+
+    gap: 12px;
+  }
+
+  .header nav {
+    gap: 18px;
+  }
+
+  .header nav a {
+    padding: 10px 0;
+
+    font-size: 13px;
+  }
+
+  .header nav a.active::after {
+    bottom: 4px;
+  }
+
+  .container {
+    width: 92%;
+
+    padding-top: 30px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+
+    padding-top: 15px;
+
+    gap: 22px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 34px;
+
+    letter-spacing: -1px;
+  }
+
+  .dashboard-intro {
+    font-size: 14px;
+  }
+
+  .dataset-card {
+    width: 100%;
+  }
+
+  .stats-grid,
+  .salary-grid,
+  .methodology-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .section-heading > p {
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+  .analytics-section {
+    margin-top: 45px;
+  }
+
+  .chart-card {
+    padding: 18px;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .page-heading h2 {
+    font-size: 28px;
+  }
+
+  .dashboard-filters {
+    padding: 17px;
+  }
+
+  .filter-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clear-filters {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .header {
+    flex-direction: row;
+
+    align-items: center;
+  }
+
+  .header h1 {
+    font-size: 21px;
+  }
+
+  .header p {
+    display: none;
+  }
+
+  .header nav {
+    gap: 14px;
+  }
+
+  .header nav a {
+    font-size: 12px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 30px;
+  }
+
+  .dashboard-intro {
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .stat-card {
+    padding: 19px;
+  }
+
+  .stat-card-value {
+    font-size: 25px;
+  }
+
+  .salary-card {
+    padding: 19px;
+  }
+
+  .methodology-panel {
+    padding: 22px;
+  }
+
+  .pagination {
+    gap: 5px;
+  }
+
+  .pagination-button,
+  .pagination-page {
+    min-width: 34px;
+
+    height: 34px;
+
+    padding: 0 9px;
+
+    font-size: 11px;
+  }
+}
