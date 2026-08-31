@@ -231,17 +231,6 @@ All analytics endpoints accept the same optional filters: `category`, `region`, 
 
 ---
 
-## Lessons learned / debugging notes
-
-A few real issues surfaced and fixed during development, worth calling out because they reflect the kind of problems that show up in any scrape-clean-load-serve pipeline:
-
-- **Silent column mismatch between the cleaning and import stages.** The cleaning pipeline added new normalized salary columns, but the import script's explicit column list wasn't updated to match — so the columns existed in the database schema but were never actually written to, and every salary chart on the dashboard silently rendered empty despite the data being "there."
-- **Upsert conflict collisions.** The database's `UNIQUE` constraint (`job_title`, `career_category`, `company`, `location`) didn't match the CSV-level deduplication key (`job_url`), so two rows with different URLs but identical standardized fields could land in the same `INSERT ... ON CONFLICT DO UPDATE` batch — which PostgreSQL rejects, since a conflict target can't be updated twice in one command. Fixed by deduplicating on the database's actual conflict columns immediately before the insert.
-- **A stray zero poisoning aggregates.** A handful of postings parsed to a literal `0` salary and were incorrectly marked as "disclosed," which silently became the `MIN()` in every salary aggregate and made the "lowest salary" KPI show `N/A` (the frontend correctly treats non-positive values as invalid) even though every other figure was fine. Fixed at the source by rejecting non-positive parsed values in `standardize_salary.py`.
-- **A full-page loading state was unmounting the search input on every keystroke.** The Jobs page returned a completely different component tree while `loading === true`, which included every search-triggered refetch — so the `<input>` element was destroyed and recreated on every character typed, losing focus each time. Fixed by only showing the full-page loader before the very first successful fetch, and using a lightweight inline "Updating results..." state for every fetch after that.
-
----
-
 ## Roadmap
 
 - [ ] Move `DATABASE_URL` and other secrets to environment variables before deployment
